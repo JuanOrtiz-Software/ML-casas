@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b1020;
+  --foreground: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fondo oscuro con degradado */
+.app-background {
+  background:
+    radial-gradient(ellipse 80% 50% at 15% -10%, rgba(79, 70, 229, 0.35), transparent),
+    radial-gradient(ellipse 70% 50% at 90% 0%, rgba(168, 85, 247, 0.28), transparent),
+    linear-gradient(160deg, #0b1020 0%, #111827 55%, #0b1020 100%);
+}
+
+/* Tarjeta glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Alternativa con fondo opaco cuando no se soporta backdrop-filter */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-card {
+    background: rgba(17, 24, 39, 0.94);
+  }
+}
+
+/* Luces o blobs difusos con movimiento lento */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.blob-1 {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.blob-2 {
+  animation: drift 26s ease-in-out infinite reverse;
+}
+
+.blob-3 {
+  animation: drift 22s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -40px) scale(1.12);
+  }
+}
+
+/* Respeto de prefers-reduced-motion para las animaciones decorativas */
+@media (prefers-reduced-motion: reduce) {
+  .blob-1,
+  .blob-2,
+  .blob-3 {
+    animation: none;
+  }
+}

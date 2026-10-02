@@ -1,0 +1,11 @@
+Terminal 1, API
+
+.venv/bin/python -m uvicorn backend.app.main:app --reload
+
+Terminal 2, frontend:
+
+cd frontend
+npm run dev
+
+Luego abre http://localhost:3000. La documentación de la API está en http://localhost:8000/docs.
+

@@ -1,0 +1,21 @@
+# Entorno virtual de Python
+.venv/
+
+# Variables de entorno (pueden contener secretos)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node.js / Next.js
+node_modules/
+.next/
+
+# MLflow (se regenera con el entrenamiento)
+mlruns/
+mlflow.db*
+
+# Sistema operativo
+.DS_Store

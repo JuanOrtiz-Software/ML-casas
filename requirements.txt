@@ -1,0 +1,7 @@
+# Entorno completo de desarrollo (incluye las dependencias de la API).
+-r backend/requirements.txt
+
+# Entrenamiento y pruebas.
+matplotlib~=3.11.2
+pytest~=9.1.1
+httpx~=0.28.1

@@ -1,0 +1,10 @@
+# Dependencias de ejecución de la API (FastAPI + MLflow + scikit-learn).
+# La versión de scikit-learn aquí es la misma que se usa para entrenar.
+mlflow~=3.16.1
+scikit-learn~=1.9.1
+pandas~=3.0.6
+numpy~=2.5.3
+fastapi~=0.142.2
+uvicorn~=0.54.0
+pydantic~=2.13.5
+python-dotenv~=1.2.4
